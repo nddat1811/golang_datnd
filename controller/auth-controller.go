@@ -1,7 +1,6 @@
 package controller
 
 import (
-	"fmt"
 	"net/http"
 	"strconv"
 
@@ -78,7 +77,6 @@ func (c *authController) Login(ctx *gin.Context) {
 func (c *authController) Register(ctx *gin.Context) {
 	var registerDTO dto.RegisterDTO
 	errorDTO := ctx.ShouldBind(&registerDTO)
-	fmt.Println("hi: ", registerDTO)
 	if errorDTO != nil {
 		response := helper.BuildErrorResponse("Failed to process request 1", errorDTO.Error(), helper.EmptyObj{})
 		ctx.AbortWithStatusJSON(http.StatusBadRequest, response)
