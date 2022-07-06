@@ -1,0 +1,1 @@
+{"buildTargets":[".PHONY","all","build","clean","migratedown","migrateup","server"],"launchTargets":[],"customConfigurationProvider":{"workspaceBrowse":{"browsePath":[],"compilerArgs":[]},"fileIndex":[]}}

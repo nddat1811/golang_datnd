@@ -30,17 +30,25 @@ func NewAuthController(authService service.AuthService, jwtService service.JWTSe
 	}
 }
 
+type LoginSwagger struct {
+    // The email for user
+	Email  string `json:"email" validate:"required" example:"dat1@gmail.com"`
+	// The password for user
+	Password string `json:"password" validate:"required" example:"123456789"` 
+} // @name LoginSwagger
+
 // Login godoc
 // @Summary Login
 // @Schemes
-// @Description Login directory
+// @Description Login 
 // @Tags Auth
 // @Accept json
 // @Produce json
+// @Param login body LoginSwagger true "The body to login" 
 // @Success 200 {string} string "success"
-// @Success 400 {string} string "error"
-// @Success 404 {string} string "error"
-// @Success 500 {string} string "error"
+// @Success 400 {string} string "Bad request"
+// @Success 404 {string} string "User not found"
+// @Success 500 {string} string "Server error"
 // @Router /auth/login [post]
 func (c *authController) Login(ctx *gin.Context) {
 	var loginDTO dto.LoginDTO
@@ -61,19 +69,29 @@ func (c *authController) Login(ctx *gin.Context) {
 	ctx.AbortWithStatusJSON(http.StatusUnauthorized, response)
 }
 
+
+type RegisterSwagger struct {
+	// The name for user
+	Name  string `json:"name" validate:"required" example:"dat"`
+	// The email for user
+    Email  string `json:"email" validate:"required" example:"dat1@gmail.com"`
+	// The password for user
+	Password string `json:"password" validate:"required" example:"123456789"` 
+} // @name RegisterSwagger
+
 // Register godoc
 // @Summary Register
 // @Schemes
-// @Description Register directory
+// @Description Register new user
 // @Tags Auth
-// @Param name path string true "name"
 // @Accept json
 // @Produce json
+// @Param register body RegisterSwagger true "The body to register" 
 // @Success 200 {string} string "success"
-// @Success 400 {string} string "error"
-// @Success 404 {string} string "error"
-// @Success 500 {string} string "error"
-// @Router /auth/register[post]
+// @Success 400 {string} string "Bad request"
+// @Success 404 {string} string "User not found"
+// @Success 500 {string} string "Server error"
+// @Router /auth/register [post]
 func (c *authController) Register(ctx *gin.Context) {
 	var registerDTO dto.RegisterDTO
 	errorDTO := ctx.ShouldBind(&registerDTO)

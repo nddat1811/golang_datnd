@@ -6,9 +6,12 @@ import (
 	"github.com/gin-gonic/gin"
 	"github.com/nddat1811/simple_project_golang/config"
 	"github.com/nddat1811/simple_project_golang/controller"
+	docs "github.com/nddat1811/simple_project_golang/docs"
 	"github.com/nddat1811/simple_project_golang/middleware"
 	"github.com/nddat1811/simple_project_golang/repository"
 	"github.com/nddat1811/simple_project_golang/service"
+	swaggerFiles "github.com/swaggo/files"
+	ginSwagger "github.com/swaggo/gin-swagger"
 	"gorm.io/gorm"
 )
 
@@ -35,20 +38,19 @@ var (
 // @securityDefinitions.apiKey ApiKeyAuth
 // @in hearder
 // @name Authorization
-//docs "github.com/nddat1811/simple_project_golang/docs"
-//swaggerFiles "github.com/swaggo/files"
-//ginSwagger "github.com/swaggo/gin-swagger"
 
 func main() {
 	defer config.CloseDatabaseConnection(db)
 	r := gin.Default()
 
-	//docs.SwaggerInfo.BasePath = "/api"
+	docs.SwaggerInfo.BasePath = "/api"
+
 	authRoutes := r.Group("api/auth")
 	{
 		authRoutes.POST("/login", authController.Login)
 		authRoutes.POST("/register", authController.Register)
 	}
+
 
 	userRoutes := r.Group("api/user", middleware.AuthorizeJWT(jwtService))
 	{
@@ -57,11 +59,13 @@ func main() {
 		//userRoutes.GET("profile/:name", userController.ProfileByName)
 	}
 
+	
 	//no authorize
+
 	userRoute2s := r.Group("api/user")
 	{
 
-		userRoute2s.GET("profile/:name", userController.ProfileByName)
+		userRoute2s.GET("/profile/:name", userController.ProfileByName)
 		userRoute2s.GET("/getall", userController.GetAllUser)
 	}
 
@@ -74,6 +78,6 @@ func main() {
 		bookRoutes.DELETE("/:id", bookController.Delete)
 	}
 
-	//r.GET("/swagger/*any", ginSwagger.WrapHandler(swaggerFiles.Handler))
+	r.GET("/swagger/*any", ginSwagger.WrapHandler(swaggerFiles.Handler))
 	log.Fatal(r.Run(":9090"))
 }

@@ -5,7 +5,7 @@ import (
 	"os"
 
 	"github.com/joho/godotenv"
-	"github.com/nddat1811/simple_project_golang/entity"
+	//"github.com/nddat1811/simple_project_golang/entity"
 	//migrate "github.com/golang-migrate/migrate/v4"
 	"gorm.io/driver/mysql"
 	"gorm.io/gorm"
@@ -21,48 +21,6 @@ type sQLConfig struct {
 	Loc       string `json:"loc"`
 }
 
-// func MigrationDB(db *gorm.DB) error {
-// 	sqlDB, err := db.DB()
-// 	if err != nil {
-// 		return err
-// 	}
-
-// 	migrations := &migrate.FileMigrationSource{
-// 		Dir: MigrationPath,
-// 	}
-
-// 	n, err := migrate.Exec(sqlDB, DriverName, migrations, migrate.Up)
-
-// 	if err != nil {
-// 		return err
-// 	}
-
-// 	n, err = migrate.Exec(sqlDB, DriverName, migrations, migrate.Up)
-
-// 	if err != nil {
-// 		return err
-// 	}
-
-// 	fmt.Println("Applied migraions! ", n)
-
-// 	return nil
-// }
-
-// func loadDBConfigs(filepath string) *sQLConfig {
-// 	configFile, err := os.Open(filepath)
-
-// 	defer configFile.Close()
-
-// 	if err != nil {
-// 		return nil
-// 	}
-
-// 	jsonParser := json.NewDecoder(configFile)
-// 	config := sQLConfig{}
-// 	jsonParser.Decode(&config)
-
-// 	return &config
-// }
 //SetupDatabaseConnection is creating a new connection to DB
 func SetupDatabaseConnection() *gorm.DB {
 	errEnv := godotenv.Load()
@@ -81,8 +39,9 @@ func SetupDatabaseConnection() *gorm.DB {
 	if err != nil {
 		panic("Failed to create a connection to database")
 	}
+	//db.Connect
 
-	db.AutoMigrate(&entity.Book{}, &entity.User{})
+	//db.AutoMigrate(&entity.Book{}, &entity.User{})
 	fmt.Println("Connect success")
 	return db
 }

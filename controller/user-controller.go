@@ -73,6 +73,19 @@ func (c *userController) Profile(context *gin.Context) {
 	context.JSON(http.StatusOK, res)
 }
 
+// GetProfileByName godoc
+// @Summary GetProfileByName
+// @Schemes
+// @Description Get Profile by name
+// @Tags Users
+// @Accept json
+// @Produce json
+// @Param name path string true "name"
+// @Success 200 {string} string "success"
+// @Success 400 {string} string "Bad request"
+// @Success 404 {string} string "User not found"
+// @Success 500 {string} string "Server error"
+// @Router /user/profile/{name} [get]
 func (c *userController) ProfileByName(context *gin.Context) {
 	name := context.Param("name")
 	if name == "" {
@@ -92,12 +105,23 @@ func (c *userController) ProfileByName(context *gin.Context) {
 
 }
 
+// Get All Users godoc
+// @Summary Get All Users
+// @Schemes
+// @Description Get All Users
+// @Tags Users
+// @Accept json
+// @Produce json
+// @Success 200 {string} string "success"
+// @Success 400 {string} string "Bad request"
+// @Success 404 {string} string "User not found"
+// @Success 500 {string} string "Server error"
+// @Router /user/getall [get]
 func (c *userController) GetAllUser(context *gin.Context) {
 	var users []entity.User = c.userService.GetAll()
 	res := helper.BuildResponse(true, "OK", users)
 	context.JSON(http.StatusOK, res)
 }
-
 
 // func (c *userController) RegisterUserRoutes(rg *gin.RouterGroup) {
 // 	userRoutes := rg.Group("/user", middleware.AuthorizeJWT(jwtService))

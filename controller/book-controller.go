@@ -34,20 +34,6 @@ func NewBookController(bookServ service.BookService, jwtServ service.JWTService)
 	}
 }
 
-
-
-// CreateUser godoc
-// @Summary Create user
-// @Schemes
-// @Description create Resource directory
-// @Tags Users
-// @Accept json
-// @Produce json
-// @Success 200 {string} string "success"
-// @Success 400 {string} string "error"
-// @Success 404 {string} string "error"
-// @Success 500 {string} string "error"
-// @Router /user/create [get]
 func (c *bookController) All(context *gin.Context) {
 	var books []entity.Book = c.bookService.All()
 	res := helper.BuildResponse(true, "OK", books)

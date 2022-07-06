@@ -9,7 +9,7 @@ migrateup:
 	migrate -path migration -database "mysql://root:nguyenducdat18112001@tcp(localhost:3308)/golang_api?x-no-lock=true" -verbose up
 
 migratedown:
-	migrate -path migration -database "mysql://dat:123456@tcp(localhost:3306)/golang_api?x-no-lock=true" -verbose down
+	migrate -path migration -database "mysql://dat:123456@tcp(localhost:3308)/golang_api?x-no-lock=true" -verbose down
 
 .PHONY: all build migrateup migratedown
 clean:
