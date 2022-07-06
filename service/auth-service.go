@@ -36,7 +36,7 @@ func (service *authService) VerifyCredential(email string, password string) inte
 		if v.Email == email && comparedPassword {
 			return res
 		}
-		return false
+		return false 
 	}
 	return false
 }

@@ -6,7 +6,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Wed Jul  6 07:55:43 2022
+# Make data base, printed on Wed Jul  6 10:10:33 2022
 
 # Variables
 
@@ -47,7 +47,7 @@ VSCODE_NLS_CONFIG = {"locale":"en-us","availableLanguages":{},"_languagePackSupp
 # environment
 _ = /usr/share/code/code
 # environment
-JOURNAL_STREAM = 8:45448
+JOURNAL_STREAM = 8:48212
 # environment
 XDG_CONFIG_DIRS = /etc/xdg/xdg-ubuntu:/etc/xdg
 # environment
@@ -63,7 +63,6 @@ USERNAME = datnd
 # environment
 MAKELEVEL := 0
 # environment
- 
 XDG_DATA_DIRS = /usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop
 # environment
 VSCODE_AMD_ENTRYPOINT = vs/workbench/api/node/extensionHostProcess
@@ -72,7 +71,7 @@ DBUS_SESSION_BUS_ADDRESS = unix:path=/run/user/1001/bus
 # environment
 VSCODE_VERBOSE_LOGGING = true
 # environment
-MANAGERPID = 1982
+MANAGERPID = 2035
 # environment
 GVM_PATH_BACKUP = /home/datnd/.gvm/bin:/home/datnd/.gvm/bin:/home/datnd/go/bin:/usr/local/go/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/usr/local/go/bin:/usr/local/go/bin
 # environment
@@ -92,7 +91,7 @@ GPG_AGENT_INFO = /run/user/1001/gnupg/S.gpg-agent:0:1
 # environment
 GJS_DEBUG_OUTPUT = stderr
 # environment
-SESSION_MANAGER = local/CPU003528:@/tmp/.ICE-unix/2195,unix/CPU003528:/tmp/.ICE-unix/2195
+SESSION_MANAGER = local/CPU003528:@/tmp/.ICE-unix/2242,unix/CPU003528:/tmp/.ICE-unix/2242
 # environment
 XDG_RUNTIME_DIR = /run/user/1001
 # environment
@@ -104,7 +103,7 @@ VSCODE_LOG_STACK = false
 # environment
 ELECTRON_RUN_AS_NODE = 1
 # environment
-INVOCATION_ID = 8b3943024beb461ebbc1926d6c7727aa
+INVOCATION_ID = 2b628825556f420bb9f8c60fd0876557
 # default
 .FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell archives jobserver output-sync check-symlink load
 # environment
@@ -114,7 +113,7 @@ XDG_SESSION_DESKTOP = ubuntu
 # environment
 SSH_AUTH_SOCK = /run/user/1001/keyring/ssh
 # environment
-GIO_LAUNCHED_DESKTOP_FILE_PID = 9691
+GIO_LAUNCHED_DESKTOP_FILE_PID = 4987
 # automatic
 %F = $(notdir $%)
 # environment
@@ -126,7 +125,7 @@ PWD = /home/datnd/golang_datnd
 # default
 .LOADED := 
 # environment
-SSH_AGENT_PID = 2152
+SSH_AGENT_PID = 2204
 # environment
 ORIGINAL_XDG_CURRENT_DESKTOP = ubuntu:GNOME
 # environment
@@ -166,7 +165,7 @@ SHLVL = 0
 # environment
 GNOME_SHELL_SESSION_MODE = ubuntu
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /run/user/1001/vscode-ipc-60771802-09d3-4bf8-890b-0e8a06735c18.sock
+VSCODE_IPC_HOOK_EXTHOST = /run/user/1001/vscode-ipc-6d3914c7-f355-4d0f-ac51-365c5f873a62.sock
 # default
 MAKE_VERSION := 4.2.1
 # environment
@@ -214,6 +213,7 @@ LC_MEASUREMENT = vi_VN
 # environment
 LC_ALL = C
 # environment
+ 
 GJS_DEBUG_TOPICS = JS ERROR;JS LOG
 # automatic
 ^F = $(notdir $^)
@@ -234,7 +234,7 @@ LC_ADDRESS = vi_VN
 # environment
 LANG = C
 # environment
-VSCODE_PID = 9691
+VSCODE_PID = 4987
 # variable set hash-table stats:
 # Load=112/1024=11%, Rehash=0, Collisions=19/140=14%
 
@@ -244,9 +244,9 @@ VSCODE_PID = 9691
 
 # Directories
 
-# . (device 2050, inode 58330757): 21 files, no impossibilities.
+# . (device 2050, inode 58330757): 22 files, no impossibilities.
 
-# 21 files, no impossibilities in 1 directories.
+# 22 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
@@ -323,7 +323,6 @@ build:
 #  Modification time never checked.
 #  File has not been updated.
 
- 
 clean:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
@@ -356,12 +355,12 @@ migratedown:
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 32 / storage = 272 B / avg = 8 B
-# current buf: size = 8162 B / used = 272 B / count = 32 / avg = 8 B
+# strcache buffers: 1 (0) / strings = 33 / storage = 277 B / avg = 8 B
+# current buf: size = 8162 B / used = 277 B / count = 33 / avg = 8 B
 
-# strcache performance: lookups = 49 / hit rate = 34%
+# strcache performance: lookups = 50 / hit rate = 34%
 # hash-table stats:
-# Load=32/8192=0%, Rehash=0, Collisions=1/49=2%
-# Finished Make data base on Wed Jul  6 07:55:43 2022
+# Load=33/8192=0%, Rehash=0, Collisions=1/50=2%
+# Finished Make data base on Wed Jul  6 10:10:33 2022
 
  
